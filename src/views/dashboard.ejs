@@ -11,7 +11,7 @@
         <% if (files && files.length) { %>
             <h2>Uploaded files</h2>
             <ul>
-                <% files.forEach(function(file) { %>
+                <% files.forEach((file) => { %>
                     <li>
                         <strong><%= file.name %></strong>
                         (<%= file.size %> bytes)
