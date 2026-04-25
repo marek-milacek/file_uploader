@@ -26,7 +26,11 @@
                                 <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
                                     <div>
                                         <p class="font-medium text-slate-900"><%= file.name %></p>
-                                        <p class="text-sm text-slate-500"><%= file.size %> bytes</p>
+                                        <p class="text-sm text-slate-500">
+                                            <span><%= file.size %> bytes</span>
+                                            <span class="mx-2">•</span>
+                                            <span>Uploaded on <%= new Date(file.createdAt).toLocaleString() %></span>
+                                        </p>
                                     </div>
                                     <div class="flex flex-wrap gap-2">
                                         <a href="/upload/download/<%= file.id %>" class="rounded-full border border-slate-300 px-4 py-2 text-slate-800 hover:bg-slate-100">Stáhnout</a>
