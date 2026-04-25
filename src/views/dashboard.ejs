@@ -4,8 +4,23 @@
         <%- include("./partials/head") %>
     </head>
     <body>
-        </h1>Welcome to the Dashboard!</h1>
+        <h1>Welcome to the Dashboard!</h1>
         <p>For uploading files, please use the upload link below:</p>
         <a href="/upload">Upload File</a>
+
+        <% if (files && files.length) { %>
+            <h2>Uploaded files</h2>
+            <ul>
+                <% files.forEach(function(file) { %>
+                    <li>
+                        <strong><%= file.name %></strong>
+                        (<%= file.size %> bytes)
+                        - <a href="/upload/download/<%= file.id %>">Stáhnout</a>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <p>Uploaded files will appear here.</p>
+        <% } %>
     </body>
 </html>

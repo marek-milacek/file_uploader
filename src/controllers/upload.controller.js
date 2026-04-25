@@ -1,5 +1,7 @@
 const { db } = require("../db/pool");
 const { files } = require("../db/schema");
+const path = require("node:path");
+const { eq } = require("drizzle-orm");
 
 function renderUploadForm(req, res) {
     res.render("forms/upload", { title: "Upload File" });
@@ -25,4 +27,32 @@ async function uploadFile(req, res) {
     }
 }
 
-module.exports = { renderUploadForm, uploadFile };
+async function downloadFile(req, res, next) {
+    try {
+        const fileId = Number(req.params.id);
+        if (Number.isNaN(fileId)) {
+            return res.status(400).send("Invalid file id.");
+        }
+
+        const [file] = await db
+            .select()
+            .from(files)
+            .where(eq(files.id, fileId))
+            .where(eq(files.userId, req.user.id));
+
+        if (!file) {
+            return res.status(404).send("File not found.");
+        }
+
+        const filePath = path.resolve(file.path);
+        return res.download(filePath, file.name, (err) => {
+            if (err) {
+                next(err);
+            }
+        });
+    } catch (error) {
+        next(error);
+    }
+}
+
+module.exports = { renderUploadForm, uploadFile, downloadFile };

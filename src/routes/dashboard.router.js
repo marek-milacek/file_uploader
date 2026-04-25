@@ -1,9 +1,9 @@
 const { Router } = require("express");
 const router = Router();
 const { ensureAuthenticated } = require("../middlewares/authentication");
-const { renderDashboard } = require("../controllers/dashboard.controller");
-const { uploadFile } = require("../controllers/upload.controller");
-const upload = require("../config/multer.config");
+const {
+    renderDashboard,
+} = require("../controllers/dashboard.controller");
 
 router.get("/", ensureAuthenticated, renderDashboard);
 
