@@ -3,10 +3,33 @@
     <head>
         <%- include("./partials/head") %>
     </head>
-    <body>
-        <h1>Welcome to the Home Page</h1>
-        <p>For file uploads</p>
-        <a href="/logIn">Log in</a> or <a href="/register">Register</a>
-        <a href="/delete">delete db</a>
+    <body
+        class="min-h-screen bg-slate-50 text-slate-900 flex items-center justify-center p-4"
+    >
+        <main
+            class="w-full max-w-xl rounded-3xl bg-white p-8 shadow-lg ring-1 ring-slate-200"
+        >
+            <h1 class="text-3xl font-semibold mb-3">
+                Welcome to the Home Page
+            </h1>
+            <p class="mb-6 text-slate-600">
+                A simple file uploader with login and dashboard.
+            </p>
+            <div class="space-x-3">
+                <a
+                    href="/logIn"
+                    class="inline-block rounded-full bg-slate-900 px-5 py-3 text-white hover:bg-slate-700"
+                    >Log in</a
+                >
+                <a
+                    href="/register"
+                    class="inline-block rounded-full border border-slate-200 px-5 py-3 text-slate-900 hover:bg-slate-100"
+                    >Register</a
+                >
+            </div>
+            <div class="mt-6 text-sm text-slate-500">
+                <a href="/delete" class="text-slate-700 underline">Delete DB</a>
+            </div>
+        </main>
     </body>
 </html>

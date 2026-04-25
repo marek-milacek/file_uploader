@@ -3,10 +3,40 @@
     <head>
         <%- include("../partials/head") %>
     </head>
-    <body>
-        <form action="/upload" method="POST" enctype="multipart/form-data">
-            <input type="file" name="fileInput" required />
-            <button type="submit">Upload</button>
-        </form>
+    <body
+        class="min-h-screen bg-slate-50 text-slate-900 flex items-center justify-center p-4"
+    >
+        <main
+            class="w-full max-w-md rounded-3xl bg-white p-8 shadow-lg ring-1 ring-slate-200"
+        >
+            <h1 class="text-3xl font-semibold mb-6">Upload a file</h1>
+            <form
+                action="/upload"
+                method="POST"
+                enctype="multipart/form-data"
+                class="space-y-5"
+            >
+                <div>
+                    <label
+                        class="block text-sm font-medium text-slate-700"
+                        for="fileInput"
+                        >Choose file</label
+                    >
+                    <input
+                        type="file"
+                        id="fileInput"
+                        name="fileInput"
+                        required
+                        class="mt-2 w-full text-slate-700"
+                    />
+                </div>
+                <button
+                    type="submit"
+                    class="w-full rounded-full bg-slate-900 px-5 py-3 text-white hover:bg-slate-700"
+                >
+                    Upload
+                </button>
+            </form>
+        </main>
     </body>
 </html>
