@@ -11,7 +11,6 @@ const dashboardRouter = require("./routes/dashboard.router");
 const logInRouter = require("./routes/logIn.router");
 const registerRouter = require("./routes/register.router");
 const logoutRouter = require("./routes/logout.router");
-const deleteRouter = require("./routes/delete.router");
 const uploadRouter = require("./routes/upload.router");
 const errorHandler = require("./middlewares/errorHandler");
 
@@ -30,7 +29,6 @@ app.use("/dashboard", dashboardRouter);
 app.use("/logIn", logInRouter);
 app.use("/register", registerRouter);
 app.use("/logout", logoutRouter);
-app.use("/delete", deleteRouter);
 app.use("/upload", uploadRouter);
 
 app.use(errorHandler);
