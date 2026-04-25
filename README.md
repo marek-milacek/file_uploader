@@ -40,6 +40,12 @@ A simple Node.js file uploader application with user authentication, secure sess
 
 ## Environment variables
 
+Copy the example file and fill in your values:
+
+```bash
+cp .env.example .env
+```
+
 Create a `.env` file in the project root with:
 
 ```env
