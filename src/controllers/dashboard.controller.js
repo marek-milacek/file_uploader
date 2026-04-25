@@ -12,6 +12,7 @@ async function renderDashboard(req, res, next) {
         res.render("dashboard", {
             title: "Dashboard",
             files: userFiles,
+            user: req.user,
         });
     } catch (error) {
         next(error);
