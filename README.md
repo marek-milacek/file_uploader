@@ -92,7 +92,3 @@ The server starts on `http://localhost:3001` by default.
 
 - Make sure `uploads/` exists and is writable.
 - The app enforces that only authenticated users can access `/dashboard`, `/upload`, `/logout`, and file actions.
-
-## License
-
-This project is provided as-is.
