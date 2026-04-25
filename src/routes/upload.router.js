@@ -6,10 +6,13 @@ const {
     renderUploadForm,
     uploadFile,
     downloadFile,
+    deleteFile,
 } = require("../controllers/upload.controller");
 
 router.get("/", ensureAuthenticated, renderUploadForm);
-router.post("/", ensureAuthenticated, upload.single("fileInput"), uploadFile);
 router.get("/download/:id", ensureAuthenticated, downloadFile);
+router.get("/delete/:id", ensureAuthenticated, deleteFile);
+
+router.post("/", ensureAuthenticated, upload.single("fileInput"), uploadFile);
 
 module.exports = router;

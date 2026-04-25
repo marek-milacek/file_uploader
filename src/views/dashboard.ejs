@@ -16,6 +16,7 @@
                         <strong><%= file.name %></strong>
                         (<%= file.size %> bytes)
                         - <a href="/upload/download/<%= file.id %>">Stáhnout</a>
+                        - <a href="/upload/delete/<%= file.id %>">Smazat</a>
                     </li>
                 <% }); %>
             </ul>
