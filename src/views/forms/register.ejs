@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("../partials/head") %>
+    </head>
+    <body>
+        <h1>Register</h1>
+        <% if (locals.errors) { %>
+        <ul>
+            <% errors.forEach(function(error) { %>
+            <li style="color: red;"><%= error.msg %></li>
+            <% }); %>
+        </ul>
+        <% } %>
+        <form action="/register" method="POST">
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required />
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </body>
+</html>
