@@ -2,6 +2,8 @@
 
 A simple Node.js file uploader application with user authentication, secure sessions, and per-user file management.
 
+![Home page screenshot](src/public/image.png)
+
 ## Features
 
 - User registration and login using Passport.js with local strategy
