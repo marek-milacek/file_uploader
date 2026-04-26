@@ -56,6 +56,12 @@ PORT=3001
 
 ## Installation
 
+Before running the app, create an `uploads` folder in the project root:
+
+```bash
+mkdir uploads
+```
+
 ```bash
 npm install
 ```
